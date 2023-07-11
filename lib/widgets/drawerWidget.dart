@@ -9,11 +9,14 @@ class DrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          buildDrawerItems(context),
-        ],
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 70, 16, 0),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            buildDrawerItems(context),
+          ],
+        ),
       ),
     );
   }
@@ -26,13 +29,13 @@ class DrawerWidget extends StatelessWidget {
                   leading: Icon(
                     e.icon,
                     color: Colors.white,
-                    size: 30,
+                    size: 22,
                   ),
                   title: Text(
                     e.title,
-                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                    style: const TextStyle(color: Colors.white, fontSize: 15),
                   ),
-                  onTap: () {},
+                  onTap: () => onSelectedItem(e),
                 ))
             .toList(),
       );

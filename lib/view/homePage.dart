@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:whizzard/model/drawerItemModel.dart';
+import 'package:whizzard/utils/color.dart';
+import 'package:whizzard/view/calendraShiftPage.dart';
 import 'package:whizzard/view/mainPage.dart';
+import 'package:whizzard/view/myPlanPage.dart';
+import 'package:whizzard/view/myTripPage.dart';
+import 'package:whizzard/view/myVouchersPage.dart';
+import 'package:whizzard/view/profilePage.dart';
+import 'package:whizzard/view/referPage.dart';
 import 'package:whizzard/widgets/drawer.dart';
 
+import '../data/drawerItemsData.dart';
 import '../widgets/drawerWidget.dart';
 import 'home.dart';
 
@@ -17,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   late double yOffset;
   late double scaleFactor;
   late bool isDrawerOpen = false;
+  DrawerItem item = DrawerItemsData.home;
   bool isDrawer = false;
 
   @override
@@ -64,18 +74,35 @@ class _HomePageState extends State<HomePage> {
         // ),
         // drawer: const DrawerList(),
         // body: MainPage()
-        backgroundColor: Color(0xff3473cb),
+        backgroundColor: darkBlueColor,
         body: Stack(
-          children: [
-            // drawerWidget(),
-            buildPage()
-          ],
+          children: [drawerWidget(), buildPage()],
         ),
       ),
     );
   }
 
-  // Widget drawerWidget() => SafeArea(child: DrawerWidget());
+  Widget drawerWidget() => SafeArea(
+          child: Container(
+        width: xOffset,
+        child: DrawerWidget(
+          onSelectedItem: (item) {
+            setState(() => this.item = item);
+            closeDrawer();
+          },
+          // onSelectedItem: (item) {
+          //   switch (item) {
+          //     case DrawerItemsData.logout:
+          //       ScaffoldMessenger.of(context)
+          //           .showSnackBar(SnackBar(content: Text("Logging Out")));
+          //       return;
+          //     default:
+          //       setState(() => this.item = item);
+          //       closeDrawer();
+          //   }
+          // },
+        ),
+      ));
 
   Widget buildPage() {
     return WillPopScope(
@@ -109,14 +136,35 @@ class _HomePageState extends State<HomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(isDrawerOpen ? 20 : 0),
                 child: Container(
-                  color: isDrawerOpen ? Colors.white12 : Color(0xff3473cb),
-                  child: Home(
-                    openDrawer: openDrawer,
-                  ),
+                  color: isDrawerOpen ? Colors.white12 : darkBlueColor,
+                  child: getDrawerPage(),
+                  // Home(
+                  //   openDrawer: openDrawer,
+                  // ),
                 ),
               ),
             )),
       ),
     );
+  }
+
+  Widget getDrawerPage() {
+    switch (item) {
+      case DrawerItemsData.myTrips:
+        return MyTrip(openDrawer: openDrawer);
+      case DrawerItemsData.calendraShift:
+        return CalendraShiftPage(openDrawer: openDrawer);
+      case DrawerItemsData.profile:
+        return ProfilePage(openDrawer: openDrawer);
+      case DrawerItemsData.myPlans:
+        return MyPlan(openDrawer: openDrawer);
+      case DrawerItemsData.myVouchers:
+        return MyVouchers(openDrawer: openDrawer);
+      case DrawerItemsData.refer:
+        return ReferPage(openDrawer: openDrawer);
+      case DrawerItemsData.home:
+      default:
+        return MainPage(openDrawer: openDrawer);
+    }
   }
 }
