@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whizzard/view/homePage.dart';
+import 'package:whizzard/view/signIn.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return const SignInWidget();
   }
 }
