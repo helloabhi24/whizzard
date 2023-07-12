@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:whizzard/utils/color.dart';
 import 'package:whizzard/utils/customText.dart';
 import '../widgets/drawerMenuWidget.dart';
+import '../widgets/personalInfoWidget.dart';
+import 'package:get/get.dart';
+
+import '../widgets/vehicleInfoWidget.dart';
+import 'bankInfoPage.dart';
 
 class ProfilePage extends StatelessWidget {
   final VoidCallback openDrawer;
@@ -34,27 +39,34 @@ class ProfilePage extends StatelessWidget {
                     )
                   ]),
             ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: CustomText(
-                text: "Personal Information",
+            GestureDetector(
+              onTap: () => Get.to(PersonalInfoWidget()),
+              child: ListTile(
+                leading: Icon(Icons.person),
+                title: CustomText(
+                  text: "Personal Information",
+                ),
+                subtitle: CustomText(
+                  text: "Aadhar, Pan, Address",
+                ),
+                trailing: Icon(Icons.arrow_forward),
               ),
-              subtitle: CustomText(
-                text: "Aadhar, Pan, Address",
+            ),
+            GestureDetector(
+              onTap: () => Get.to(VehicleInfoWidget()),
+              child: ListTile(
+                leading: Icon(Icons.directions_car),
+                title: CustomText(
+                  text: "Vehicle Details",
+                ),
+                subtitle: CustomText(
+                  text: "Tax, Pollution, Insurance, Fitness",
+                ),
+                trailing: Icon(Icons.arrow_forward),
               ),
-              trailing: Icon(Icons.arrow_forward),
             ),
             ListTile(
-              leading: Icon(Icons.directions_car),
-              title: CustomText(
-                text: "Vehicle Details",
-              ),
-              subtitle: CustomText(
-                text: "Tax, Pollution, Insurance, Fitness",
-              ),
-              trailing: Icon(Icons.arrow_forward),
-            ),
-            ListTile(
+              onTap: () => Get.to(BankInfoPage()),
               leading: Icon(Icons.account_balance),
               title: CustomText(
                 text: "Bank Details",
