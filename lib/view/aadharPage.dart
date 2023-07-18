@@ -25,7 +25,7 @@ class _AadharPageState extends State<AadharPage> {
             padding: const EdgeInsets.all(30.0),
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const CustomText(
                     text: "UPDATE AADHAR INFORMATION",
@@ -38,6 +38,7 @@ class _AadharPageState extends State<AadharPage> {
                   ),
                   const CustomText(
                     text: "Name as Given in AADHAR CARD*",
+                    fontSize: 19,
                   ),
                   const SizedBox(
                     height: 5,
@@ -54,6 +55,7 @@ class _AadharPageState extends State<AadharPage> {
                   ),
                   const CustomText(
                     text: "AADHAR CARD NO *",
+                    fontSize: 19,
                   ),
                   const SizedBox(
                     height: 5,
@@ -71,6 +73,7 @@ class _AadharPageState extends State<AadharPage> {
                   ),
                   const CustomText(
                     text: "Date of Birth",
+                    fontSize: 19,
                   ),
                   const SizedBox(
                     height: 5,
@@ -88,6 +91,22 @@ class _AadharPageState extends State<AadharPage> {
                   ),
                   const CustomText(
                     text: "Upload Aadhar Font Photo *",
+                    fontSize: 19,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SizedBox(
+                    width: 280,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Upload Aadhar Card'),
+                    ),
+                  ),
+                  CustomText(
+                    text: "Upload Aadhar Back Photo *",
+                    fontSize: 19,
                   ),
                   const SizedBox(
                     height: 10,

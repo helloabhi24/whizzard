@@ -16,7 +16,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           shadowColor: Colors.transparent,
-          backgroundColor: Colors.red,
+          backgroundColor: Color.fromARGB(137, 113, 8, 134),
           leading: DrawerMenuWidget(onClicked: openDrawer),
           title: const Text("Profile Page"),
         ),
@@ -25,7 +25,7 @@ class ProfilePage extends StatelessWidget {
             Container(
               width: 360,
               height: 250,
-              color: Colors.blue,
+              color: Color.fromARGB(255, 155, 194, 209),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -33,12 +33,14 @@ class ProfilePage extends StatelessWidget {
                       height: 10,
                     ),
                     CircleAvatar(
-                      radius: 35,
-                      child: Icon(
-                        Icons.abc,
-                        size: 50,
-                      ),
-                    ),
+                        radius: 35,
+                        child: Text(
+                          "PIC",
+                          style: TextStyle(
+                              wordSpacing: 10,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20),
+                        )),
                     SizedBox(
                       height: 15,
                     ),
@@ -51,7 +53,7 @@ class ProfilePage extends StatelessWidget {
                       height: 12,
                     ),
                     CustomText(
-                      text: "BHO-AMZ-Lal GHATI(BHOE)",
+                      text: "Client Site Code",
                       color: whiteColor,
                       fontSize: 16,
                     ),
@@ -165,10 +167,9 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                   CustomText(
-                    text: "Other Account Info",
-                    fontSize: 23,
-                    color: Colors.grey,
-                  ),
+                      text: "Other Account Info",
+                      fontSize: 23,
+                      color: Colors.blueGrey),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
@@ -184,17 +185,17 @@ class ProfilePage extends StatelessWidget {
                                 0.0, 2.0), // shadow direction: bottom right
                           )
                         ],
-                        color: Color.fromARGB(96, 161, 165, 179),
+                        color: Color.fromARGB(95, 208, 211, 221),
                       ),
                       height: 50,
                       width: 360,
                       child: ListTile(
                         title: CustomText(
-                          text: "Blood Group",
+                          text:
+                              "Blood Group                                             A+",
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
                         ),
-                        trailing: Icon(Icons.arrow_forward_ios),
                       ),
                     ),
                   ),
@@ -204,30 +205,25 @@ class ProfilePage extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(left: 8, right: 8),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 209, 209, 219),
-                          blurRadius: 2.0,
-                          spreadRadius: 0.0,
-                          offset: Offset(
-                              0.0, 2.0), // shadow direction: bottom right
-                        )
-                      ],
-                      color: Color.fromARGB(96, 161, 165, 179),
-                    ),
-                    height: 75,
+                        borderRadius: BorderRadius.circular(8.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 209, 209, 219),
+                            blurRadius: 2.0,
+                            spreadRadius: 0.0,
+                            offset: Offset(
+                                0.0, 2.0), // shadow direction: bottom right
+                          )
+                        ],
+                        color: lightgery),
+                    height: 50,
                     width: 360,
                     child: ListTile(
-                      leading: Icon(Icons.directions_car),
-                      iconColor: Color.fromARGB(255, 102, 100, 100),
                       title: CustomText(
-                        text: "Vehicle Details",
+                        text: "Emergency Contact          7906509341",
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
                       ),
-                      subtitle: CustomText(
-                        text: "Tax, Pollution, Insurance, Fitness",
-                      ),
-                      trailing: Icon(Icons.arrow_forward_ios),
                     ),
                   ),
                   Padding(
@@ -245,20 +241,220 @@ class ProfilePage extends StatelessWidget {
                                 0.0, 2.0), // shadow direction: bottom right
                           )
                         ],
-                        color: Color.fromARGB(96, 161, 165, 179),
+                        color: lightgery,
                       ),
-                      height: 75,
+                      height: 50,
                       width: 360,
                       child: ListTile(
-                        leading: Icon(Icons.account_balance),
-                        iconColor: Color.fromARGB(255, 102, 100, 100),
                         title: CustomText(
-                          text: "Bank Details",
-                        ),
-                        subtitle: CustomText(
-                          text: "Bank, IFSC, Account",
+                          text: "Holydays List",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
                         ),
                         trailing: Icon(Icons.arrow_forward_ios),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 209, 209, 219),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  0.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
+                          color: lightgery),
+                      height: 50,
+                      width: 360,
+                      child: ListTile(
+                        title: CustomText(
+                          text: "Insurance Card",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 209, 209, 219),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  0.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
+                          color: lightgery),
+                      height: 50,
+                      width: 360,
+                      child: ListTile(
+                        title: CustomText(
+                          text: "Payslip",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        trailing: Icon(Icons.calendar_month),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 209, 209, 219),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  0.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
+                          color: lightgery),
+                      height: 50,
+                      width: 360,
+                      child: ListTile(
+                        title: CustomText(
+                          text: "ID Card",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 209, 209, 219),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  0.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
+                          color: lightgery),
+                      height: 50,
+                      width: 360,
+                      child: ListTile(
+                        title: CustomText(
+                          text: "Verification Status",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        trailing: Icon(
+                          Icons.check_box,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 209, 209, 219),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  0.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
+                          color: lightgery),
+                      height: 50,
+                      width: 360,
+                      child: ListTile(
+                        title: CustomText(
+                          text: "Contract Agreement",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                      ),
+                    ),
+                  ),
+                  CustomText(
+                    text: "User Activity",
+                    fontSize: 23,
+                    color: Colors.blueGrey,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 209, 209, 219),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  0.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
+                          color: lightgery),
+                      height: 50,
+                      width: 360,
+                      child: ListTile(
+                        title: CustomText(
+                          text:
+                              "You are referred by                               NA",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Container(
+                      margin: EdgeInsets.only(left: 8, right: 8),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 209, 209, 219),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  0.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
+                          color: lightgery),
+                      height: 50,
+                      width: 360,
+                      child: ListTile(
+                        title: CustomText(
+                          text: "last Login          sat Jul 08 2023 8:16 PM",
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),

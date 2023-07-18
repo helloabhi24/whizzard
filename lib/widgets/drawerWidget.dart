@@ -28,12 +28,13 @@ class DrawerWidget extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                   leading: Icon(
                     e.icon,
-                    color: Colors.white,
-                    size: 22,
+                    color: Color.fromARGB(255, 8, 9, 112),
+                    size: 27,
                   ),
                   title: Text(
                     e.title,
-                    style: const TextStyle(color: Colors.white, fontSize: 15),
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 6, 7, 112), fontSize: 16),
                   ),
                   onTap: () => onSelectedItem(e),
                 ))

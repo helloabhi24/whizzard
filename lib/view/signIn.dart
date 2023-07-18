@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:whizzard/utils/color.dart';
 import 'package:whizzard/view/homePage.dart';
 import 'package:whizzard/view/signUp.dart';
 
@@ -12,37 +13,53 @@ class SignInWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Padding(
           padding: const EdgeInsets.only(top: 50, left: 20),
           child: Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(100),
-                  bottomRight: Radius.circular(100)),
-              color: Color.fromARGB(121, 174, 165, 229),
-            ),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(100),
+                    bottomRight: Radius.circular(100)),
+                color: Colors.green.withOpacity(0.09)
+                // color: Color.fromARGB(121, 174, 165, 229),
+                ),
             // color: Color.fromARGB(123, 60, 153, 96),
-            height: 610,
+            height: 670,
             width: 320,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 const CircleAvatar(
-                  backgroundColor: Colors.blue,
-                  child: Icon(
-                    Icons.abc,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(
+                    minRadius: 20,
+                    maxRadius: 45,
+                    backgroundColor: Colors.transparent,
+                    child: Image(
+                      image: AssetImage(
+                        "assets/images/logo2.png",
+                      ),
+                      width: 200,
+                      height: 100,
+                    )),
+                SizedBox(
                   height: 20,
                 ),
-                const Text(
+                Text(
                   'Welcome,',
-                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.green[600]),
+                ),
+                Text(
+                  'Haril Techno Ways Pvt Ltd',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green[900]),
                 ),
                 const SizedBox(
                   height: 20,

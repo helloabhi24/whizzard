@@ -152,7 +152,7 @@ class _BankInfoPageState extends State<BankInfoPage> {
                                 Row(
                                   children: [
                                     CircleAvatar(
-                                      backgroundColor: blackColor,
+                                      backgroundColor: Dblue,
                                       radius: 6,
                                     ),
                                     // getwidth(context, 0.020),
@@ -188,7 +188,7 @@ class _BankInfoPageState extends State<BankInfoPage> {
                                     icon: Icon(
                                       Icons.arrow_forward,
                                       size: 25,
-                                      color: darkBlueColor,
+                                      color: Dblue,
                                     )),
                               ],
                             ),
@@ -308,6 +308,7 @@ class _BankInfoPageState extends State<BankInfoPage> {
                               padding: const EdgeInsets.all(12.0),
                               child: CustomText(
                                 text: "Submit",
+                                fontSize: 18,
                                 color: whiteColor,
                                 fontWeight: FontWeight.w500,
                                 wordSpacing: 1,
