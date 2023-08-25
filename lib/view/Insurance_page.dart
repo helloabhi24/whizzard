@@ -1,18 +1,18 @@
 import 'package:HTW/view/Add_vehical_info.dart';
-import 'package:HTW/view/Insurance_page.dart';
+import 'package:HTW/view/pollution.dart';
 import 'package:flutter/material.dart';
 import 'package:HTW/utils/color.dart';
 import 'package:HTW/utils/customText.dart';
 import 'package:get/get.dart';
 
-class Pollution extends StatefulWidget {
-  Pollution({super.key});
+class Insurance extends StatefulWidget {
+  Insurance({super.key});
 
   @override
-  State<Pollution> createState() => _PollutionState();
+  State<Insurance> createState() => _InsuranceState();
 }
 
-class _PollutionState extends State<Pollution> {
+class _InsuranceState extends State<Insurance> {
   String? gender;
   bool isChecked = false;
   @override
@@ -77,13 +77,10 @@ class _PollutionState extends State<Pollution> {
                                 color: Colors.white,
                               ),
                             ),
-                            GestureDetector(
-                              onTap: () => Get.off(Insurance()),
-                              child: CustomText(
-                                text: 'insurance',
-                                fontSize: 17,
-                                color: Colors.white,
-                              ),
+                            CustomText(
+                              text: 'insurance',
+                              fontSize: 17,
+                              color: Colors.white,
                             ),
                           ],
                         ),
@@ -106,16 +103,16 @@ class _PollutionState extends State<Pollution> {
                         child: TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Upload Pollution Photo*',
+                            labelText: 'Upload Insurance Photo*',
                             labelStyle: TextStyle(fontSize: 13),
                           ),
                         ),
                       ),
                     ]),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       child: CustomText(
-                        text: "Pollution Certification Expiry Date*",
+                        text: "Insurance Provider Name*",
                         fontSize: 19,
                       ),
                     ),
@@ -125,35 +122,33 @@ class _PollutionState extends State<Pollution> {
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Select Expiry Date',
+                            labelText: 'Enter Insurance Provider Name',
                             labelStyle: TextStyle(fontSize: 13)),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Row(children: [
-                        Icon(
-                          Icons.upload_file,
-                          color: Color.fromARGB(255, 3, 114, 165),
-                          size: 40,
-                        ),
-                        const SizedBox(
-                          height: 45,
-                          width: 250,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Upload Vehicle RC Back Side Photo*',
-                              labelStyle: TextStyle(fontSize: 13),
-                            ),
-                          ),
-                        ),
-                      ]),
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: CustomText(
+                        text: "Insurance Number*",
+                        fontSize: 19,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    const SizedBox(
+                      width: 280,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Enter Insurance Number',
+                            labelStyle: TextStyle(fontSize: 13)),
+                      ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 8),
                       child: CustomText(
-                        text: "Pollution Certification Expiry Date*",
+                        text: "Insurance Expiry Date*",
                         fontSize: 19,
                       ),
                     ),

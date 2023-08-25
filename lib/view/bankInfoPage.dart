@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whizzard/utils/color.dart';
-import 'package:whizzard/utils/customText.dart';
+import 'package:HTW/utils/color.dart';
+import 'package:HTW/utils/customText.dart';
 
 class BankInfoPage extends StatefulWidget {
   const BankInfoPage({super.key});
@@ -24,23 +24,34 @@ class _BankInfoPageState extends State<BankInfoPage> {
                     fit: BoxFit.fill),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Scrollbar(
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const CustomText(
-                          text: "UPDATE BANK INFORMATION",
-                          fontWeight: FontWeight.w700,
-                          fontSize: 22,
-                          wordSpacing: 2,
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color.fromARGB(57, 128, 130, 199),
+                          ),
+                          width: 340,
+                          height: 60,
+                          child: Center(
+                            child: const CustomText(
+                              text: "UPDATE BANK INFORMATION",
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20,
+                              wordSpacing: 2,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         const CustomText(
                           text: "Bank's IFSC Code*",
+                          fontSize: 18,
                         ),
                         const SizedBox(
                           height: 5,
@@ -50,92 +61,91 @@ class _BankInfoPageState extends State<BankInfoPage> {
                           child: TextField(
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: 'IFSC CODE'),
+                                labelText: 'IFSC CODE',
+                                labelStyle: TextStyle(fontSize: 13)),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
-                        const CustomText(
-                          text: "Bank Name *",
-                        ),
+                        const CustomText(text: "Bank Name *", fontSize: 18),
                         const SizedBox(
                           height: 5,
                         ),
                         const SizedBox(
-                          width: 280,
+                          width: 330,
                           child: TextField(
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: 'Enter Bank Name'),
+                                labelText: 'Enter Bank Name',
+                                labelStyle: TextStyle(fontSize: 13)),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         const CustomText(
-                          text: "Bank's Branch Name",
-                        ),
+                            text: "Bank's Branch Name", fontSize: 18),
                         const SizedBox(
                           height: 5,
                         ),
                         const SizedBox(
-                          width: 280,
+                          width: 330,
                           child: TextField(
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: 'Enter Branch Name'),
+                                labelText: 'Enter Branch Name',
+                                labelStyle: TextStyle(fontSize: 13)),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         const CustomText(
-                          text: "Branch's Address*",
-                        ),
+                            text: "Branch's Address*", fontSize: 18),
                         const SizedBox(
                           height: 10,
                         ),
                         const SizedBox(
-                          width: 280,
+                          width: 330,
                           child: TextField(
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: "Enter Branch's Address"),
+                                labelText: "Enter Branch's Address",
+                                labelStyle: TextStyle(fontSize: 13)),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const CustomText(text: "Account Number*", fontSize: 18),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const SizedBox(
+                          width: 330,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: "Account Number",
+                                labelStyle: TextStyle(fontSize: 13)),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         const CustomText(
-                          text: "Account Number*",
-                        ),
+                            text: "Confirm Account Number*", fontSize: 18),
                         const SizedBox(
                           height: 10,
                         ),
                         const SizedBox(
-                          width: 280,
+                          width: 330,
                           child: TextField(
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: "Account Number"),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const CustomText(
-                          text: "Confirm Account Number*",
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const SizedBox(
-                          width: 280,
-                          child: TextField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: "Confirm Account Number"),
+                                labelText: "Confirm Account Number",
+                                labelStyle: TextStyle(fontSize: 13)),
                           ),
                         ),
                         const SizedBox(
@@ -209,15 +219,13 @@ class _BankInfoPageState extends State<BankInfoPage> {
                     fit: BoxFit.fitHeight),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Scrollbar(
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const CustomText(
-                          text: "Account Type*",
-                        ),
+                        const CustomText(text: "Account Type*", fontSize: 18),
                         const SizedBox(
                           height: 5,
                         ),
@@ -227,6 +235,7 @@ class _BankInfoPageState extends State<BankInfoPage> {
                                 backgroundColor: darkBlueColor,
                                 label: CustomText(
                                   text: "Saving",
+                                  fontSize: 18,
                                   color: whiteColor,
                                   fontWeight: FontWeight.w500,
                                 )),
@@ -236,6 +245,7 @@ class _BankInfoPageState extends State<BankInfoPage> {
                             const Chip(
                                 label: CustomText(
                               text: "Current",
+                              fontSize: 18,
                               color: Colors.black,
                               fontWeight: FontWeight.w500,
                             ))
@@ -245,73 +255,80 @@ class _BankInfoPageState extends State<BankInfoPage> {
                           height: 10,
                         ),
                         const CustomText(
-                          text: "Upload Bank Passbook *",
-                        ),
+                            text: "Upload Bank Passbook *", fontSize: 18),
                         const SizedBox(
                           height: 10,
                         ),
                         const SizedBox(
-                          width: 280,
+                          width: 330,
                           child: TextField(
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: "Bank Passbook"),
+                                labelText: "Bank Passbook",
+                                labelStyle: TextStyle(fontSize: 13)),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         const CustomText(
-                          text: "Upload Other Proof *",
-                        ),
+                            text: "Upload Other Proof *", fontSize: 18),
                         const SizedBox(
                           height: 10,
                         ),
                         const SizedBox(
-                          width: 280,
+                          width: 330,
                           child: TextField(
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: "Upload Other Proof"),
+                              border: OutlineInputBorder(),
+                              labelText: "Upload Other Proof",
+                              labelStyle: TextStyle(fontSize: 13),
+                            ),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         const CustomText(
-                          text: "Account Holder Name *",
-                        ),
+                            text: "Account Holder Name *", fontSize: 18),
                         const SizedBox(
                           height: 10,
                         ),
                         const SizedBox(
-                          width: 280,
+                          width: 330,
                           child: TextField(
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: "Account Holder Name"),
+                              border: OutlineInputBorder(),
+                              labelText: "Account Holder Name",
+                              labelStyle: TextStyle(fontSize: 13),
+                            ),
                           ),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         const CustomText(
-                          text: "Enter Beneficiary Information",
-                        ),
+                            text: "Enter Beneficiary Information",
+                            fontSize: 18),
                         const SizedBox(
                           height: 20,
                         ),
                         Center(
-                          child: Card(
-                            color: darkBlueColor,
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: CustomText(
-                                text: "Submit",
-                                fontSize: 18,
-                                color: whiteColor,
-                                fontWeight: FontWeight.w500,
-                                wordSpacing: 1,
+                          child: SizedBox(
+                            width: 110,
+                            child: Card(
+                              color: darkBlueColor,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Center(
+                                  child: CustomText(
+                                    text: "Submit",
+                                    fontSize: 13,
+                                    color: whiteColor,
+                                    fontWeight: FontWeight.w500,
+                                    wordSpacing: 1,
+                                  ),
+                                ),
                               ),
                             ),
                           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whizzard/utils/color.dart';
-import 'package:whizzard/view/Add_vehical_info.dart';
+import 'package:HTW/utils/color.dart';
+import 'package:HTW/view/Add_vehical_info.dart';
 import 'package:get/get.dart';
 
 import '../utils/customText.dart';
@@ -20,11 +20,21 @@ class VehicleInfoWidget extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          const CustomText(
-            text: "VAHICLE INFORMATION",
-            fontWeight: FontWeight.w700,
-            fontSize: 22,
-            wordSpacing: 2,
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Color.fromARGB(57, 128, 130, 199),
+            ),
+            width: 340,
+            height: 60,
+            child: Center(
+              child: const CustomText(
+                text: "VAHICLE INFORMATION",
+                fontWeight: FontWeight.w700,
+                fontSize: 22,
+                wordSpacing: 2,
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 35),

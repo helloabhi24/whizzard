@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:whizzard/utils/color.dart';
-import 'package:whizzard/utils/customText.dart';
+import 'package:HTW/utils/color.dart';
+import 'package:HTW/utils/customText.dart';
+import 'package:get/get.dart';
 
 class Up_Adress extends StatefulWidget {
   Up_Adress({super.key});
@@ -23,17 +24,47 @@ class _Up_AdressState extends State<Up_Adress> {
                 fit: BoxFit.fitHeight),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(15.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomText(
-                    text: "Local Address",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 22,
-                    wordSpacing: 2,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 35),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Color.fromARGB(57, 128, 130, 199),
+                      ),
+                      width: 340,
+                      height: 60,
+                      child: Stack(alignment: Alignment.centerLeft, children: [
+                        GestureDetector(
+                          onTap: () => Get.back(),
+                          child: Icon(
+                            Icons.arrow_back,
+                            size: 30,
+                          ),
+                        ),
+                        Center(
+                          child: const CustomText(
+                            text: "   Up Date Address",
+                            fontWeight: FontWeight.w700,
+                            fontSize: 22,
+                            wordSpacing: 2,
+                          ),
+                        )
+                      ]),
+                      // child: Center(
+                      //   child: const CustomText(
+                      //     text: "Local Address",
+                      //     fontWeight: FontWeight.w700,
+                      //     fontSize: 22,
+                      //     wordSpacing: 2,
+                      //   ),
+                      // ),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
@@ -46,10 +77,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 5,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'House no'),
+                          border: OutlineInputBorder(),
+                          labelText: 'House no',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -63,10 +96,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 5,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'Area name'),
+                          border: OutlineInputBorder(),
+                          labelText: 'Area name',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -80,10 +115,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 5,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'Landmark'),
+                          border: OutlineInputBorder(),
+                          labelText: 'Landmark',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -97,10 +134,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'city'),
+                          border: OutlineInputBorder(),
+                          labelText: 'city',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   CustomText(
@@ -111,10 +150,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'state'),
+                          border: OutlineInputBorder(),
+                          labelText: 'state',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -131,10 +172,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'Pin no'),
+                          border: OutlineInputBorder(),
+                          labelText: 'Pin no',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   CustomText(
@@ -145,10 +188,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'country'),
+                          border: OutlineInputBorder(),
+                          labelText: 'country',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -181,10 +226,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 5,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'House no'),
+                          border: OutlineInputBorder(),
+                          labelText: 'House no',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -198,10 +245,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 5,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'Area name'),
+                          border: OutlineInputBorder(),
+                          labelText: 'Area name',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -215,10 +264,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 5,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'Landmark'),
+                          border: OutlineInputBorder(),
+                          labelText: 'Landmark',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -232,10 +283,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'city'),
+                          border: OutlineInputBorder(),
+                          labelText: 'city',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   CustomText(
@@ -246,10 +299,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'state'),
+                          border: OutlineInputBorder(),
+                          labelText: 'state',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -266,10 +321,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'Pin no'),
+                          border: OutlineInputBorder(),
+                          labelText: 'Pin no',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   CustomText(
@@ -280,10 +337,12 @@ class _Up_AdressState extends State<Up_Adress> {
                     height: 10,
                   ),
                   const SizedBox(
-                    width: 280,
+                    width: 330,
                     child: TextField(
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: 'country'),
+                          border: OutlineInputBorder(),
+                          labelText: 'country',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(

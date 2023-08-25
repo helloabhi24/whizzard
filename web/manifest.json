@@ -1,6 +1,6 @@
 {
-    "name": "whizzard",
-    "short_name": "whizzard",
+    "name": "HTW",
+    "short_name": "HTW",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

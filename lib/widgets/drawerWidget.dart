@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whizzard/model/drawerItemModel.dart';
+import 'package:HTW/model/drawerItemModel.dart';
 
 import '../data/drawerItemsData.dart';
 

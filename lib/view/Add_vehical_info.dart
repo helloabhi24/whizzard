@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:whizzard/utils/color.dart';
-import 'package:whizzard/utils/customText.dart';
+import 'package:HTW/utils/color.dart';
+import 'package:HTW/utils/customText.dart';
 import 'package:get/get.dart';
-import 'package:whizzard/view/pollution.dart';
+import 'package:HTW/view/pollution.dart';
+
+import 'Insurance_page.dart';
 
 class Add_Vehicle_info extends StatefulWidget {
   Add_Vehicle_info({super.key});
@@ -36,51 +38,64 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                 fit: BoxFit.fitHeight),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(top: 50, left: 13),
+            padding: const EdgeInsets.only(top: 50, left: 05),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: CustomText(
-                      text: "Add Vehicle Information",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 22,
-                      wordSpacing: 2,
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color.fromARGB(57, 128, 130, 199),
+                    ),
+                    width: 340,
+                    height: 60,
+                    child: Center(
+                      child: CustomText(
+                        text: "Add Vehicle Information",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 22,
+                        wordSpacing: 2,
+                      ),
                     ),
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
-                      color: Colors.blue,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        CustomText(
-                          text: 'Vehicle/RC',
-                          fontSize: 17,
-                          color: Colors.white,
-                        ),
-                        GestureDetector(
-                          onTap: () => Get.to(Pollution()),
-                          child: CustomText(
-                            text: 'Pollution',
+                  Padding(
+                    padding: const EdgeInsets.only(right: 5, top: 8),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(17)),
+                        color: Colors.blue,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          CustomText(
+                            text: 'Vehicle/RC',
                             fontSize: 17,
                             color: Colors.white,
                           ),
-                        ),
-                        CustomText(
-                          text: 'insurance',
-                          fontSize: 17,
-                          color: Colors.white,
-                        ),
-                      ],
+                          GestureDetector(
+                            onTap: () => Get.off(Pollution()),
+                            child: CustomText(
+                              text: 'Pollution',
+                              fontSize: 17,
+                              color: Colors.white,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => Get.off(Insurance()),
+                            child: CustomText(
+                              text: 'insurance',
+                              fontSize: 17,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      height: 40,
+                      width: 340,
                     ),
-                    height: 40,
-                    width: 340,
                   ),
                   const SizedBox(
                     height: 20,
@@ -97,7 +112,8 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                     child: TextField(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Please Enter Vehicle Number'),
+                          labelText: 'Please Enter Vehicle Number',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   SizedBox(
@@ -172,7 +188,8 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                     child: TextField(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Select Vehicle Brand'),
+                          labelText: 'Select Vehicle Brand',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -190,7 +207,8 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                     child: TextField(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Select Vehicle Variant'),
+                          labelText: 'Select Vehicle Variant',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -208,7 +226,8 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                     child: TextField(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Select Vehicle Model'),
+                          labelText: 'Select Vehicle Model',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   CustomText(
@@ -223,7 +242,8 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                     child: TextField(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Select Vehicle Tonnage'),
+                          labelText: 'Select Vehicle Tonnage',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   const SizedBox(
@@ -364,11 +384,11 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                     height: 10,
                   ),
                   Row(children: [
-                    Icon(
-                      Icons.upload_file,
-                      color: Color.fromARGB(255, 3, 114, 165),
-                      size: 40,
-                    ),
+                    // Icon(
+                    //   Icons.upload_file,
+                    //   color: Color.fromARGB(255, 3, 114, 165),
+                    //   size: 40,
+                    // ),
                     const SizedBox(
                       height: 45,
                       width: 250,
@@ -379,15 +399,15 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                         ),
                       ),
                     ),
+                    Icon(
+                      Icons.upload_file,
+                      color: Color.fromARGB(255, 3, 114, 165),
+                      size: 40,
+                    ),
                   ]),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Row(children: [
-                      Icon(
-                        Icons.upload_file,
-                        color: Color.fromARGB(255, 3, 114, 165),
-                        size: 40,
-                      ),
                       const SizedBox(
                         height: 45,
                         width: 250,
@@ -395,17 +415,18 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Upload Vehicle RC Back Side Photo*',
+                            labelStyle: TextStyle(fontSize: 13),
                           ),
                         ),
+                      ),
+                      Icon(
+                        Icons.upload_file,
+                        color: Color.fromARGB(255, 3, 114, 165),
+                        size: 40,
                       ),
                     ]),
                   ),
                   Row(children: [
-                    Icon(
-                      Icons.upload_file,
-                      color: Color.fromARGB(255, 3, 114, 165),
-                      size: 40,
-                    ),
                     const SizedBox(
                       height: 45,
                       width: 250,
@@ -413,8 +434,14 @@ class _Add_Vehicle_infoState extends State<Add_Vehicle_info> {
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Upload Vehicle Front  Photo*',
+                          labelStyle: TextStyle(fontSize: 13),
                         ),
                       ),
+                    ),
+                    Icon(
+                      Icons.upload_file,
+                      color: Color.fromARGB(255, 3, 114, 165),
+                      size: 40,
                     ),
                   ]),
                   const SizedBox(

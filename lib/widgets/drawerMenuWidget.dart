@@ -10,7 +10,7 @@ class DrawerMenuWidget extends StatelessWidget {
     return IconButton(
       onPressed: onClicked,
       icon: const Icon(FontAwesomeIcons.alignLeft),
-      color: Color.fromARGB(255, 227, 252, 5),
+      color: Color.fromARGB(255, 2, 99, 58),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whizzard/utils/color.dart';
+import 'package:HTW/utils/color.dart';
 import '../utils/customText.dart';
 import '../widgets/drawerMenuWidget.dart';
 

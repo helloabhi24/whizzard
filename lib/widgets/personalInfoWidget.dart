@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whizzard/view/Address.dart';
-import 'package:whizzard/view/Clothing.dart';
-import 'package:whizzard/view/Driving_licence.dart';
-import 'package:whizzard/view/panpage.dart';
-import 'package:whizzard/widgets/familyinfowidget.dart';
+import 'package:HTW/view/Address.dart';
+import 'package:HTW/view/Clothing.dart';
+import 'package:HTW/view/Driving_licence.dart';
+import 'package:HTW/view/panpage.dart';
+import 'package:HTW/widgets/familyinfowidget.dart';
 import '../utils/customText.dart';
 import '../view/aadharPage.dart';
 import '../view/personalInfoPage.dart';
@@ -26,11 +26,21 @@ class PersonalInfoWidget extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const CustomText(
-              text: "PERSONAL INFORMATION",
-              fontWeight: FontWeight.w700,
-              fontSize: 22,
-              wordSpacing: 2,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Color.fromARGB(57, 128, 130, 199),
+              ),
+              width: 340,
+              height: 60,
+              child: Center(
+                child: const CustomText(
+                  text: "PERSONAL INFORMATION",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 22,
+                  wordSpacing: 2,
+                ),
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -145,7 +155,8 @@ class PersonalInfoWidget extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15))),
                 elevation: 5,
-                child: ListTile(onTap: () => Get.to(Clothing()),
+                child: ListTile(
+                  onTap: () => Get.to(Clothing()),
                   leading: Icon(Icons.check),
                   title: CustomText(
                     text: "Clothing",

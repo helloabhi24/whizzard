@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/color.dart';
 import '../utils/customText.dart';
+import 'package:get/get.dart';
 
 class Clothing extends StatefulWidget {
   const Clothing({super.key});
@@ -35,11 +36,9 @@ class _ClothingState extends State<Clothing> {
   bool _isSelected20 = false;
   bool _isSelected21 = false;
   bool _isSelected22 = false;
-  bool _isSelected23 = false;
 
   @override
   Widget build(BuildContext context) {
-    var onSelected;
     return Scaffold(
       body: Center(
         child: Container(
@@ -49,17 +48,44 @@ class _ClothingState extends State<Clothing> {
                 fit: BoxFit.fitHeight),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(15.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomText(
-                    text: "CLOTHING DETAIL",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 22,
-                    wordSpacing: 2,
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color.fromARGB(57, 128, 130, 199),
+                    ),
+                    width: 340,
+                    height: 60,
+                    child: Stack(alignment: Alignment.centerLeft, children: [
+                      GestureDetector(
+                        onTap: () => Get.back(),
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 30,
+                        ),
+                      ),
+                      Center(
+                        child: const CustomText(
+                          text: " CLOTHING DETAIL",
+                          fontWeight: FontWeight.w700,
+                          fontSize: 22,
+                          wordSpacing: 2,
+                        ),
+                      )
+                    ]),
+                    // child: Center(
+                    //   child: const CustomText(
+                    //     text: "CLOTHING DETAIL",
+                    //     fontWeight: FontWeight.w700,
+                    //     fontSize: 22,
+                    //     wordSpacing: 2,
+                    //   ),
+                    // ),
                   ),
                   const SizedBox(
                     height: 20,
@@ -82,11 +108,6 @@ class _ClothingState extends State<Clothing> {
                   ),
                   const SizedBox(
                     height: 10,
-                  ),
-                  Image(
-                    image: AssetImage("assets/images/a.jpg"),
-                    width: 50,
-                    height: 80,
                   ),
                   const CustomText(
                     text: "Select Trouser (Waist size)36*",

@@ -1,4 +1,4 @@
-name: whizzard
+name: HTW
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^5.1.0
   animated_text_kit: ^4.2.2
+  rename: ^2.1.1
+  flutter_native_splash: ^2.3.1
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +52,9 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   font_awesome_flutter: ^10.5.0
   get: ^4.6.5
-
+  file_picker: ^5.3.3
+  # flutter_splash_screen: ^2.0.1+1
+# animated_splash_screen: ^1.3.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

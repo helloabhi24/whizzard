@@ -14,3 +14,5 @@ Color tripColor = Color.fromARGB(255, 230, 109, 181);
 
 Color Dblue = const Color.fromARGB(255, 5, 8, 197);
 Color pblue = Color.fromARGB(255, 137, 171, 238);
+Color header = Color.fromARGB(57, 128, 130, 199);
+Color Devf = Color.fromARGB(212, 77, 117, 236);

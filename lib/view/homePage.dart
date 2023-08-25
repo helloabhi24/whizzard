@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:whizzard/model/drawerItemModel.dart';
-import 'package:whizzard/utils/color.dart';
-import 'package:whizzard/view/calendraShiftPage.dart';
-import 'package:whizzard/view/mainPage.dart';
-import 'package:whizzard/view/myPlanPage.dart';
-import 'package:whizzard/view/myTripPage.dart';
-import 'package:whizzard/view/myVouchersPage.dart';
-import 'package:whizzard/view/profilePage.dart';
-import 'package:whizzard/view/referPage.dart';
-import 'package:whizzard/widgets/drawer.dart';
+import 'package:HTW/model/drawerItemModel.dart';
+import 'package:HTW/utils/color.dart';
+import 'package:HTW/view/calendraShiftPage.dart';
+import 'package:HTW/view/mainPage.dart';
+import 'package:HTW/view/myPlanPage.dart';
+import 'package:HTW/view/myTripPage.dart';
+import 'package:HTW/view/myVouchersPage.dart';
+import 'package:HTW/view/profilePage.dart';
+import 'package:HTW/view/referPage.dart';
 
 import '../data/drawerItemsData.dart';
 import '../widgets/drawerWidget.dart';
-import 'home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -51,33 +49,27 @@ class _HomePageState extends State<HomePage> {
       });
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          colorScheme:
-              ColorScheme.fromSwatch().copyWith(primary: Colors.white)),
-      home: Scaffold(
-        // appBar: AppBar(
-        //   iconTheme: const IconThemeData(color: Colors.black),
-        //   actions: const [
-        //     Icon(
-        //       Icons.call,
-        //     ),
-        //     SizedBox(
-        //       width: 20,
-        //     ),
-        //     Icon(Icons.notifications),
-        //     SizedBox(
-        //       width: 10,
-        //     ),
-        //   ],
-        // ),
-        // drawer: const DrawerList(),
-        // body: MainPage()
-        backgroundColor: darkBlueColor,
-        body: Stack(
-          children: [drawerWidget(), buildPage()],
-        ),
+    return Scaffold(
+      // appBar: AppBar(
+      //   iconTheme: const IconThemeData(color: Colors.black),
+      //   actions: const [
+      //     Icon(
+      //       Icons.call,
+      //     ),
+      //     SizedBox(
+      //       width: 20,
+      //     ),
+      //     Icon(Icons.notifications),
+      //     SizedBox(
+      //       width: 10,
+      //     ),
+      //   ],
+      // ),
+      // drawer: const DrawerList(),
+      // body: MainPage()
+      backgroundColor: darkBlueColor,
+      body: Stack(
+        children: [drawerWidget(), buildPage()],
       ),
     );
   }

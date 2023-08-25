@@ -1,6 +1,6 @@
+import 'package:HTW/splash.dart';
 import 'package:flutter/material.dart';
-import 'package:whizzard/view/homePage.dart';
-import 'package:whizzard/view/signIn.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SignInWidget();
+    return GetMaterialApp(home: Splash());
+    // SignInWidget();
   }
 }

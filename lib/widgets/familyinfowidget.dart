@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/color.dart';
 import '../utils/customText.dart';
+import 'package:get/get.dart';
 
 class Familyinfo extends StatefulWidget {
   const Familyinfo({super.key});
@@ -28,82 +29,99 @@ class _FamilyinfoState extends State<Familyinfo> {
                   const SizedBox(
                     height: 50,
                   ),
-                  const CustomText(
-                    text: "FAMILY INFORMATION",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 22,
-                    wordSpacing: 2,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30, right: 140),
-                    child: CustomText(
-                      text: "Marital status",
-                      fontSize: 20,
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color.fromARGB(57, 128, 130, 199),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            Radio(
-                                value: "Single",
-                                groupValue: radioVlaue,
-                                onChanged: (v) {
-                                  setState(() {
-                                    radioVlaue = v;
-                                  });
-                                }),
-                            CustomText(
-                              text: "Single*",
-                              fontSize: 17,
-                            ),
-                          ],
+                    width: 340,
+                    height: 60,
+                    child: Stack(alignment: Alignment.centerLeft, children: [
+                      GestureDetector(
+                        onTap: () => Get.back(),
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 30,
                         ),
-                        Row(
-                          children: [
-                            Radio(
-                                value: 'Married',
-                                groupValue: radioVlaue,
-                                onChanged: (v) {
-                                  setState(() {
-                                    radioVlaue = v;
-                                  });
-                                }),
-                            CustomText(
-                              text: "Married*",
-                              fontSize: 17,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 30, right: 60),
-                    child: CustomText(
-                      text: "Father/Husband Name",
-                      fontSize: 20,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: SizedBox(
-                      width: 280,
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Father/husband Name'),
                       ),
+                      Center(
+                        child: const CustomText(
+                          text: "  FAMILY INFORMATION",
+                          fontWeight: FontWeight.w700,
+                          fontSize: 22,
+                          wordSpacing: 2,
+                        ),
+                      )
+                    ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14, top: 20),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomText(
+                            text: "Marital status",
+                            fontSize: 18,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Radio(
+                                  value: "Single",
+                                  groupValue: radioVlaue,
+                                  onChanged: (v) {
+                                    setState(() {
+                                      radioVlaue = v;
+                                    });
+                                  }),
+                              CustomText(
+                                text: "Single*",
+                                fontSize: 16,
+                              ),
+                              Row(
+                                children: [
+                                  Radio(
+                                      value: 'Married',
+                                      groupValue: radioVlaue,
+                                      onChanged: (v) {
+                                        setState(() {
+                                          radioVlaue = v;
+                                        });
+                                      }),
+                                  CustomText(
+                                    text: "Married*",
+                                    fontSize: 16,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 25,
+                            ),
+                            child: CustomText(
+                              text: "Father/Husband Name",
+                              fontSize: 18,
+                            ),
+                          ),
+                        ]),
+                  ),
+                  SizedBox(
+                    width: 330,
+                    height: 90,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Father/husband Name',
+                          labelStyle: TextStyle(fontSize: 13)),
                     ),
                   ),
                   Divider(
-                    height: 10,
+                    height: 7,
                     thickness: 1.5,
-                    indent: 20,
-                    endIndent: 20,
+                    indent: 10,
+                    endIndent: 7,
                     color: Color.fromARGB(255, 131, 204, 235),
                   ),
                   Row(

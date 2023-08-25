@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "whizzard" "\0"
+            VALUE "FileDescription", "HTW" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "whizzard" "\0"
+            VALUE "InternalName", "HTW" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "whizzard.exe" "\0"
-            VALUE "ProductName", "whizzard" "\0"
+            VALUE "OriginalFilename", "HTW.exe" "\0"
+            VALUE "ProductName", "HTW" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

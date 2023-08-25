@@ -1,8 +1,8 @@
+import 'package:HTW/view/myTripPage.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:whizzard/utils/color.dart';
-import 'package:whizzard/utils/customText.dart';
-import 'package:whizzard/view/profilePage.dart';
+import 'package:HTW/utils/customText.dart';
+import 'package:HTW/view/profilePage.dart';
 import 'package:get/get.dart';
 
 import '../widgets/drawerMenuWidget.dart';
@@ -14,20 +14,20 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(136, 139, 59, 155),
+      backgroundColor: Color.fromARGB(118, 88, 240, 177),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color.fromARGB(137, 113, 8, 134),
+        backgroundColor: Color.fromARGB(207, 167, 172, 169),
         leading: DrawerMenuWidget(
           onClicked: openDrawer,
         ),
         iconTheme: const IconThemeData(color: Colors.black),
         actions: const [
-          Icon(Icons.call, color: Color.fromARGB(255, 227, 252, 5)),
+          Icon(Icons.call, color: Color.fromARGB(255, 4, 141, 73)),
           SizedBox(
             width: 20,
           ),
-          Icon(Icons.notifications, color: Color.fromARGB(255, 227, 252, 5)),
+          Icon(Icons.notifications, color: Color.fromARGB(255, 4, 141, 73)),
           SizedBox(
             width: 10,
           ),
@@ -44,7 +44,11 @@ class MainPage extends StatelessWidget {
                   Get.to(ProfilePage(openDrawer: openDrawer));
                 },
                 child: Card(
-                  elevation: 5,
+                  color: Color.fromARGB(248, 181, 240, 208),
+                  elevation: 15,
+                  shadowColor: Color.fromARGB(255, 18, 18, 19),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -52,7 +56,7 @@ class MainPage extends StatelessWidget {
                         width: 1,
                       ),
                       const CircleAvatar(
-                        backgroundColor: Color.fromARGB(213, 48, 88, 207),
+                        backgroundColor: Color.fromARGB(210, 79, 223, 156),
                         maxRadius: 30,
                         child: Icon(
                           Icons.abc,
@@ -100,31 +104,35 @@ class MainPage extends StatelessWidget {
                             const Text(
                               "Driver & Associate",
                               style: TextStyle(
-                                  fontSize: 14, color: Color(0xff3473cb)),
+                                  fontSize: 14,
+                                  color: Color.fromARGB(255, 13, 22, 18)),
                             ),
                             const SizedBox(
                               height: 5,
                             ),
-                            const Row(
-                              children: [
-                                Text(
-                                  "Site Code",
-                                  style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xff3059cf)),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Text(
-                                  "Profile",
-                                  style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xff3059cf)),
-                                )
-                              ],
+                            SizedBox(
+                              width: 170,
+                              child: const Row(
+                                children: [
+                                  Text(
+                                    "Site Code",
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color.fromARGB(255, 13, 21, 22)),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    "Profile",
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color.fromARGB(255, 19, 28, 29)),
+                                  )
+                                ],
+                              ),
                             ),
                             const SizedBox(
                               height: 10,
@@ -134,7 +142,7 @@ class MainPage extends StatelessWidget {
                       ),
                       const Icon(
                         Icons.arrow_forward_ios,
-                        color: Color.fromARGB(255, 5, 8, 197),
+                        color: Color.fromARGB(255, 2, 107, 37),
                         size: 30,
                       )
                     ],
@@ -142,12 +150,16 @@ class MainPage extends StatelessWidget {
                 ),
               ),
             ),
-            const Row(
+            Row(
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 8.0),
                   child: Card(
-                    elevation: 4,
+                    color: Color.fromARGB(250, 202, 207, 204),
+                    elevation: 7,
+                    shadowColor: Color.fromARGB(255, 55, 59, 57),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
                     child: SizedBox(
                       height: 100,
                       width: 100,
@@ -181,70 +193,84 @@ class MainPage extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 12),
-                  child: Card(
-                    elevation: 4,
-                    child: SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Icon(
-                            Icons.backpack_rounded,
-                            color: Color.fromARGB(255, 177, 192, 42),
-                            size: 35,
-                          ),
-                          CustomText(
-                            text: "0",
-                            fontSize: 13,
-                            fontWeight: FontWeight.w800,
-                          ),
-                          CustomText(
-                            text: "PACKAGE",
-                            fontSize: 13,
-                            fontWeight: FontWeight.w800,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
+                  child: GestureDetector(
+                    onTap: () => Get.to(MyTrip(openDrawer: openDrawer)),
+                    child: Card(
+                      color: Color.fromARGB(250, 202, 207, 204),
+                      elevation: 7,
+                      shadowColor: Color.fromARGB(255, 55, 59, 57),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25)),
+                      child: SizedBox(
+                        height: 100,
+                        width: 100,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Icon(
+                              Icons.backpack_rounded,
+                              color: Color.fromARGB(255, 177, 192, 42),
+                              size: 35,
+                            ),
+                            CustomText(
+                              text: "0",
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                            ),
+                            CustomText(
+                              text: "PACKAGE",
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Card(
-                    elevation: 4,
-                    child: SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Icon(
-                            Icons.fire_truck,
-                            color: Color.fromARGB(255, 65, 124, 31),
-                            size: 35,
-                          ),
-                          CustomText(
-                            text: "0",
-                            fontSize: 13,
-                            fontWeight: FontWeight.w800,
-                          ),
-                          CustomText(
-                            text: "TRIPS",
-                            fontSize: 13,
-                            fontWeight: FontWeight.w800,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
+                  child: GestureDetector(
+                    onTap: () => Get.to(MyTrip(openDrawer: openDrawer)),
+                    child: Card(
+                      color: Color.fromARGB(250, 202, 207, 204),
+                      elevation: 7,
+                      shadowColor: Color.fromARGB(255, 55, 59, 57),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25)),
+                      child: SizedBox(
+                        height: 100,
+                        width: 100,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Icon(
+                              Icons.fire_truck,
+                              color: Color.fromARGB(255, 65, 124, 31),
+                              size: 35,
+                            ),
+                            CustomText(
+                              text: "0",
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                            ),
+                            CustomText(
+                              text: "TRIPS",
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -254,6 +280,10 @@ class MainPage extends StatelessWidget {
             SizedBox(
               width: 338,
               child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: StadiumBorder(),
+                    primary: Color.fromARGB(255, 155, 170, 138),
+                  ),
                   onPressed: () {},
                   child: const CustomText(
                     text: "No Shift Assigned Today",
@@ -265,11 +295,10 @@ class MainPage extends StatelessWidget {
               padding: const EdgeInsets.only(top: 10),
               child: Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    // color: const Color.fromARGB(255, 238, 207, 217),
-                    color: whiteColor),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(248, 181, 240, 208)),
                 height: 350,
-                width: 340,
+                width: 333,
                 child: Column(
                   children: [
                     const Padding(
@@ -292,9 +321,9 @@ class MainPage extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          color: Colors.blue,
-                          height: 2,
-                          width: 330,
+                          color: Color.fromARGB(206, 18, 18, 19),
+                          height: 1,
+                          width: 333,
                         ),
                       ],
                     ),
@@ -322,7 +351,7 @@ class MainPage extends StatelessWidget {
                       padding: EdgeInsets.only(top: 20),
                       child: Icon(
                         Icons.bike_scooter,
-                        color: Color.fromARGB(255, 5, 8, 197),
+                        color: Color.fromARGB(255, 131, 40, 4),
                         size: 40,
                       ),
                     ),
@@ -331,7 +360,7 @@ class MainPage extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color.fromARGB(137, 113, 8, 134),
+                          color: Color.fromARGB(171, 39, 158, 103),
                         ),
                         width: 300,
                         height: 50,
@@ -341,7 +370,7 @@ class MainPage extends StatelessWidget {
                               padding: const EdgeInsets.only(left: 8),
                               child: Icon(Icons.fingerprint,
                                   size: 30,
-                                  color: Color.fromARGB(255, 6, 3, 156)),
+                                  color: Color.fromARGB(255, 22, 9, 4)),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 30),

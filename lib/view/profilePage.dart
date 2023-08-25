@@ -1,6 +1,9 @@
+import 'package:HTW/view/Drop.dart';
+import 'package:HTW/view/Edit_prifile.dart';
+import 'package:HTW/view/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:whizzard/utils/color.dart';
-import 'package:whizzard/utils/customText.dart';
+import 'package:HTW/utils/color.dart';
+import 'package:HTW/utils/customText.dart';
 import '../widgets/drawerMenuWidget.dart';
 import '../widgets/personalInfoWidget.dart';
 import 'package:get/get.dart';
@@ -15,11 +18,20 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          shadowColor: Colors.transparent,
-          backgroundColor: Color.fromARGB(137, 113, 8, 134),
-          leading: DrawerMenuWidget(onClicked: openDrawer),
-          title: const Text("Profile Page"),
-        ),
+            shadowColor: Colors.transparent,
+            backgroundColor: Color.fromARGB(137, 113, 8, 134),
+            leading: DrawerMenuWidget(onClicked: openDrawer),
+            title: const Text("Profile Page"),
+            iconTheme: const IconThemeData(color: Colors.black),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child: GestureDetector(
+                    onTap: () => Get.to(Edit_profile(openDrawer: openDrawer)),
+                    child: Icon(Icons.edit,
+                        color: Color.fromARGB(255, 227, 252, 5))),
+              ),
+            ]),
         body: SingleChildScrollView(
           child: Column(children: [
             Container(
@@ -32,15 +44,30 @@ class ProfilePage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    CircleAvatar(
-                        radius: 35,
-                        child: Text(
-                          "PIC",
-                          style: TextStyle(
-                              wordSpacing: 10,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20),
-                        )),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                            radius: 35,
+                            child: GestureDetector(
+                              onTap: () => Get.to(DropdownButtonApp()),
+                              child: Text(
+                                "PIC",
+                                style: TextStyle(
+                                    wordSpacing: 10,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20),
+                              ),
+                            )),
+                        GestureDetector(
+                          onTap: () => Get.to(FilePickerScreen()),
+                          child: Icon(
+                            Icons.zoom_in,
+                            size: 30,
+                          ),
+                        )
+                      ],
+                    ),
                     SizedBox(
                       height: 15,
                     ),
